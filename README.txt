@@ -41,3 +41,6 @@ v12.2 cache hardening:
 - HTML includes no-cache meta directives as a client-side safeguard.
 - This Week and Recipes pages show a subtle v12.2 marker for deployment diagnostics.
 Note: GitHub Pages/CDN may still briefly serve a previous root index.html immediately after deployment; client code cannot override an already-cached document before it loads. The version marker makes this obvious.
+
+
+v12.8: authentication-independent iOS scroll-boundary guard. Recipe pages clamp stale dynamic-toolbar scroll offsets on scroll/resize/pageshow/visualViewport changes for guests and signed-in users alike.

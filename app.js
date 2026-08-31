@@ -36,6 +36,35 @@ function clampScrollPosition() {
   const maxY = Math.max(0, root.scrollHeight - layoutViewportHeight);
   if (window.scrollY > maxY + 1) window.scrollTo(0, maxY);
 }
+function initScrollBoundaryGuard() {
+  // Guard against iOS/Chrome dynamic-toolbar viewport bugs for both guests and
+  // signed-in users. If the browser reports a stale scroll position beyond the
+  // layout viewport's real document boundary, clamp it immediately.
+  if (!document.body.classList.contains('recipePage') && !q('#cook')) return;
+  let rafPending = false;
+  const guard = () => {
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(() => {
+      rafPending = false;
+      clampScrollPosition();
+    });
+  };
+  window.addEventListener('scroll', guard, { passive: true });
+  window.addEventListener('resize', guard, { passive: true });
+  window.addEventListener('orientationchange', () => setTimeout(guard, 80));
+  window.addEventListener('pageshow', () => { guard(); setTimeout(guard, 100); setTimeout(guard, 500); });
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', guard, { passive: true });
+    window.visualViewport.addEventListener('scroll', guard, { passive: true });
+  }
+  // Initial stabilization must not depend on authentication resolving.
+  guard();
+  setTimeout(guard, 100);
+  setTimeout(guard, 400);
+  setTimeout(guard, 1000);
+}
+
 function afterRecipeLayout(callback) {
   requestAnimationFrame(() => requestAnimationFrame(() => {
     clampScrollPosition();
@@ -258,6 +287,7 @@ updateStep();
 renderTimer();
 renderRating();
 initRecipeModeDock();
+initScrollBoundaryGuard();
 initModalAccessibility();
 initTimerAccessibility();
 
