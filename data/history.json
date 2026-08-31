@@ -1,0 +1,52 @@
+{
+  "weeks": [
+    {
+      "weekStart": "2026-08-31",
+      "label": "Aug 31 \u2013 Sep 6, 2026",
+      "entries": [
+        {
+          "date": "2026-08-31",
+          "recipeId": "street",
+          "title": "Street Cart-Style Chicken Bowls",
+          "day": "Monday"
+        },
+        {
+          "date": "2026-09-01",
+          "recipeId": "enchiladas",
+          "title": "Chicken Enchiladas with Tomatillo Sauce",
+          "day": "Tuesday"
+        },
+        {
+          "date": "2026-09-02",
+          "recipeId": "rigatoni",
+          "title": "Chicken Sausage Rigatoni",
+          "day": "Wednesday"
+        },
+        {
+          "date": "2026-09-03",
+          "recipeId": "orange",
+          "title": "Trader Joe\u2019s Mandarin Orange Chicken",
+          "day": "Thursday"
+        },
+        {
+          "date": "2026-09-04",
+          "recipeId": "pizza",
+          "title": "Homemade Uncured Pepperoni Pizza",
+          "day": "Friday"
+        },
+        {
+          "date": "2026-09-05",
+          "recipeId": "argentine",
+          "title": "Argentine-Style Chicken & Chimichurri",
+          "day": "Saturday"
+        },
+        {
+          "date": "2026-09-06",
+          "recipeId": "meatloaf",
+          "title": "BBQ Meatloaf & Loaded Potato Wedges",
+          "day": "Sunday"
+        }
+      ]
+    }
+  ]
+}
