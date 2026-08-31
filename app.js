@@ -27,6 +27,19 @@ function renderRating(n = getRating()) {
   if (t) t.textContent = n ? `${n} of 5 stars` : 'Tap to rate';
 }
 
+function clampScrollPosition() {
+  // iOS Safari can retain a stale scroll offset after a large section is hidden,
+  // leaving a viewport-sized blank area below the real document. Clamp only
+  // after layout-changing recipe actions so normal scrolling is unaffected.
+  const maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  if (window.scrollY > maxY) window.scrollTo(0, maxY);
+}
+function afterRecipeLayout(callback) {
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    clampScrollPosition();
+    if (callback) callback();
+  }));
+}
 function setRecipeMode(mode, shouldScroll = true) {
   const cook = q('#cook'), all = q('#allsteps');
   if (!cook || !all) return;
@@ -35,7 +48,10 @@ function setRecipeMode(mode, shouldScroll = true) {
   all.classList.toggle('show', !cooking);
   if (cooking) updateStep();
   document.querySelectorAll('[data-mode]').forEach((b) => b.classList.toggle('active', b.dataset.mode === mode));
-  if (shouldScroll) (cooking ? cook : all).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const target = cooking ? cook : all;
+  afterRecipeLayout(() => {
+    if (shouldScroll) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 }
 function startCooking() { setRecipeMode('cook', true); }
 function showAll() { setRecipeMode('all', true); }
@@ -58,6 +74,7 @@ function updateStep() {
   }
   q('#prev').disabled = currentStep === 0;
   q('#next').textContent = currentStep === steps.length - 1 ? 'Done ✓' : 'Next';
+  afterRecipeLayout();
 }
 function finishCooking() {
   celebrate();

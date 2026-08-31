@@ -89,3 +89,10 @@ body.recipePage .wrap{padding-bottom:24px}
   .floatingTimer{bottom:calc(10px + env(safe-area-inset-bottom));right:10px}
   .siteVersion{margin:12px 0 0}
 }
+
+
+/* v12.4: iOS Safari recipe scroll-range hardening */
+@media(max-width:520px){
+  body.recipePage .wrap{min-height:0!important;height:auto!important}
+  .cook.active .controls{padding-bottom:18px!important}
+}
