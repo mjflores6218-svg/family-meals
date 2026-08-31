@@ -22,3 +22,6 @@ v8: Adds 1-5 star local ratings and rating filter, confetti completion with scro
 v9: Adds a sticky All Steps / Cooking Mode switcher after the top recipe controls scroll away, plus extra iPhone safe-area/bottom clearance so the minimized timer cannot cover Previous/Next/Done controls.
 
 V10: Weekly cards distinguish Planned, Cooked, and Skipped using local browser storage. Recipe library Made/Last Made counts only meals explicitly marked Cooked.
+
+
+v10.8: Added prep time, cook time, total time, recipe time filtering/search, and Recipe schema timing metadata.

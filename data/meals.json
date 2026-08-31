@@ -32,7 +32,9 @@
         "Divide rice between bowls. Add chicken, zucchini, cucumber-tomato salad, sauce, and remaining cilantro."
       ],
       "source": "https://www.hellofresh.com/recipes/street-cart-style-chicken-bowls-63ecaed802dfc404e006c190",
-      "image": "https://media.hellofresh.com/q_100%2Cw_1600%2Cf_auto%2Cc_limit%2Cfl_lossy/recipes/image/street-cart-style-chicken-bowls-d9b9cadb.jpg"
+      "image": "https://media.hellofresh.com/q_100%2Cw_1600%2Cf_auto%2Cc_limit%2Cfl_lossy/recipes/image/street-cart-style-chicken-bowls-d9b9cadb.jpg",
+      "prepTime": "PT10M",
+      "cookTime": "PT20M"
     },
     {
       "slug": "enchiladas",
@@ -60,7 +62,9 @@
         "Rest enchiladas 5 minutes before serving. Plate with the roasted corn and zucchini."
       ],
       "source": "https://www.onceuponachef.com/recipes/chicken-enchiladas-with-tomatillo-sauce.html",
-      "image": "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?auto=format&fit=crop&w=1600&q=85"
+      "image": "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?auto=format&fit=crop&w=1600&q=85",
+      "prepTime": "PT15M",
+      "cookTime": "PT25M"
     },
     {
       "slug": "rigatoni",
@@ -89,7 +93,9 @@
         "Serve rigatoni with roasted broccoli and extra Parmesan."
       ],
       "source": "https://www.hellofresh.com/recipes/chicken-sausage-rigatoni-621e855307f48b28733f1e80",
-      "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1600&q=85"
+      "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1600&q=85",
+      "prepTime": "PT10M",
+      "cookTime": "PT20M"
     },
     {
       "slug": "orange",
@@ -114,7 +120,9 @@
         "Serve chicken over rice with a generous portion of broccoli and peppers."
       ],
       "source": "",
-      "image": "https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1600&q=85"
+      "image": "https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1600&q=85",
+      "prepTime": "PT5M",
+      "cookTime": "PT20M"
     },
     {
       "slug": "pizza",
@@ -141,7 +149,9 @@
         "Rest pizza 2–3 minutes, slice, and serve with salad."
       ],
       "source": "",
-      "image": "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1600&q=85"
+      "image": "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1600&q=85",
+      "prepTime": "PT15M",
+      "cookTime": "PT20M"
     },
     {
       "slug": "argentine",
@@ -171,7 +181,9 @@
         "Slice chicken. Spoon chimichurri over the top and serve with roasted potatoes and zucchini."
       ],
       "source": "",
-      "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=1600&q=85"
+      "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=1600&q=85",
+      "prepTime": "PT15M",
+      "cookTime": "PT25M"
     },
     {
       "slug": "meatloaf",
@@ -203,7 +215,9 @@
         "Rest meatloaf 5 minutes. Serve with loaded wedges, sour cream, roasted carrots, and extra BBQ sauce if desired."
       ],
       "source": "https://www.hellofresh.com/recipes/bbq-meatloaf-and-loaded-potato-wedges-bar-67a9c9ca4113630c74a3454a",
-      "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=85"
+      "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=85",
+      "prepTime": "PT15M",
+      "cookTime": "PT35M"
     }
   ]
 }

@@ -54,7 +54,9 @@
         "https://media.hellofresh.com/w_1200,q_auto,f_auto,c_limit,fl_lossy/hellofresh_s3/63ecaed802dfc404e006c190/step-f9d3f169.jpg"
       ],
       "stepImageCredit": "Step photography: HelloFresh",
-      "stepImageCreditUrl": "https://www.hellofresh.com/recipes/street-cart-style-chicken-bowls-63ecaed802dfc404e006c190"
+      "stepImageCreditUrl": "https://www.hellofresh.com/recipes/street-cart-style-chicken-bowls-63ecaed802dfc404e006c190",
+      "prepTime": "PT10M",
+      "cookTime": "PT20M"
     },
     {
       "slug": "enchiladas",
@@ -104,7 +106,9 @@
         "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?auto=format&fit=crop&w=1200&q=82"
       ],
       "stepImageCredit": "Representative step photography: Unsplash",
-      "stepImageCreditUrl": "https://unsplash.com/license"
+      "stepImageCreditUrl": "https://unsplash.com/license",
+      "prepTime": "PT15M",
+      "cookTime": "PT25M"
     },
     {
       "slug": "rigatoni",
@@ -156,7 +160,9 @@
         "https://media.hellofresh.com/w_1200,q_auto,f_auto,c_limit,fl_lossy/hellofresh_s3/621e855307f48b28733f1e80/step-c9df414a.jpg"
       ],
       "stepImageCredit": "Step photography: HelloFresh",
-      "stepImageCreditUrl": "https://www.hellofresh.com/recipes/chicken-sausage-rigatoni-621e855307f48b28733f1e80"
+      "stepImageCreditUrl": "https://www.hellofresh.com/recipes/chicken-sausage-rigatoni-621e855307f48b28733f1e80",
+      "prepTime": "PT10M",
+      "cookTime": "PT20M"
     },
     {
       "slug": "orange",
@@ -203,7 +209,9 @@
         "https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1200&q=82"
       ],
       "stepImageCredit": "Representative step photography: Unsplash",
-      "stepImageCreditUrl": "https://unsplash.com/license"
+      "stepImageCreditUrl": "https://unsplash.com/license",
+      "prepTime": "PT5M",
+      "cookTime": "PT20M"
     },
     {
       "slug": "pizza",
@@ -251,7 +259,9 @@
         "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1200&q=82"
       ],
       "stepImageCredit": "Representative step photography: Unsplash",
-      "stepImageCreditUrl": "https://unsplash.com/license"
+      "stepImageCreditUrl": "https://unsplash.com/license",
+      "prepTime": "PT15M",
+      "cookTime": "PT20M"
     },
     {
       "slug": "argentine",
@@ -303,7 +313,9 @@
         "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=82"
       ],
       "stepImageCredit": "Representative step photography: Unsplash",
-      "stepImageCreditUrl": "https://unsplash.com/license"
+      "stepImageCreditUrl": "https://unsplash.com/license",
+      "prepTime": "PT15M",
+      "cookTime": "PT25M"
     },
     {
       "slug": "meatloaf",
@@ -358,7 +370,9 @@
         "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=82"
       ],
       "stepImageCredit": "Representative step photography: Unsplash",
-      "stepImageCreditUrl": "https://unsplash.com/license"
+      "stepImageCreditUrl": "https://unsplash.com/license",
+      "prepTime": "PT15M",
+      "cookTime": "PT35M"
     }
   ]
 }

@@ -35,3 +35,6 @@ body.recipePage{padding-bottom:calc(96px + env(safe-area-inset-bottom));}
 /* v10.7: deterministic active navigation state */
 .nav .navlinks > a.active{font-weight:800 !important;color:#20231f !important;text-decoration:none !important;border-bottom:0 !important;padding-bottom:0 !important}
 .nav .navlinks > a:not(.active){font-weight:650 !important;color:#59615a !important;text-decoration:none !important}
+
+/* v10.8 recipe time metadata */
+.mealTimes{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;font-size:13px;font-weight:650;color:#667064}.mealTimes span{white-space:nowrap}.hero .meta{flex-wrap:wrap}.recipeStats{flex-wrap:wrap}
