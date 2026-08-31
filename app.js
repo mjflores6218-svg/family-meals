@@ -31,13 +31,17 @@ function clampScrollPosition() {
   // iOS Safari can retain a stale scroll offset after a large section is hidden,
   // leaving a viewport-sized blank area below the real document. Clamp only
   // after layout-changing recipe actions so normal scrolling is unaffected.
-  const maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-  if (window.scrollY > maxY) window.scrollTo(0, maxY);
+  const root = document.documentElement;
+  const layoutViewportHeight = root.clientHeight || window.innerHeight;
+  const maxY = Math.max(0, root.scrollHeight - layoutViewportHeight);
+  if (window.scrollY > maxY + 1) window.scrollTo(0, maxY);
 }
 function afterRecipeLayout(callback) {
   requestAnimationFrame(() => requestAnimationFrame(() => {
     clampScrollPosition();
     if (callback) callback();
+    setTimeout(clampScrollPosition, 80);
+    setTimeout(clampScrollPosition, 320);
   }));
 }
 function setRecipeMode(mode, shouldScroll = true) {
@@ -59,6 +63,7 @@ function moveStep(delta) {
   if (delta > 0 && currentStep === steps.length - 1) { finishCooking(); return; }
   currentStep = Math.max(0, Math.min(steps.length - 1, currentStep + delta));
   updateStep();
+  afterRecipeLayout();
 }
 function updateStep() {
   if (!q('#stepText') || !steps.length) return;
@@ -257,35 +262,3 @@ initModalAccessibility();
 initTimerAccessibility();
 
 window.addEventListener('ffm-cloud-change', () => renderRating());
-
-/* v12.6 inline mobile layout diagnostic */
-(function initInlineLayoutDiagnostic(){
-  const box=document.querySelector('#ffmInlineDebug');
-  if(!box) return;
-  const out=box.querySelector('pre');
-  const selectors=['html','body','.wrap','.hero','#allsteps','#cook','#cook .controls','#floatingTimer'];
-  function report(){
-    const vv=window.visualViewport;
-    const lines=[
-      'FFM v12.6 diagnostic',
-      `UA=${navigator.userAgent}`,
-      `inner=${innerWidth}x${innerHeight}`,
-      `visual=${vv?Math.round(vv.width)+'x'+Math.round(vv.height):'n/a'} offsetTop=${vv?Math.round(vv.offsetTop):'n/a'}`,
-      `scrollY=${Math.round(scrollY)} docScrollH=${document.documentElement.scrollHeight} bodyScrollH=${document.body.scrollHeight}`,
-      `docClientH=${document.documentElement.clientHeight}`
-    ];
-    selectors.forEach(sel=>{
-      const el=document.querySelector(sel); if(!el){lines.push(`${sel}: missing`);return;}
-      const r=el.getBoundingClientRect(), cs=getComputedStyle(el);
-      lines.push(`${sel}: top=${Math.round(r.top+scrollY)} bottom=${Math.round(r.bottom+scrollY)} h=${Math.round(r.height)} display=${cs.display} pos=${cs.position} minH=${cs.minHeight} padB=${cs.paddingBottom} marginB=${cs.marginBottom}`);
-    });
-    const children=[...document.body.children].filter(el=>getComputedStyle(el).position!=='fixed');
-    children.forEach((el,i)=>{ const r=el.getBoundingClientRect(); lines.push(`bodyChild${i}=${el.tagName}#${el.id||''}.${el.className||''} bottom=${Math.round(r.bottom+scrollY)} h=${Math.round(r.height)}`); });
-    out.textContent=lines.join('\n');
-  }
-  box.querySelector('button').addEventListener('click',async()=>{report();try{await navigator.clipboard.writeText(out.textContent)}catch(e){}});
-  report();
-  window.addEventListener('resize',report);
-  window.addEventListener('scroll',report,{passive:true});
-  window.addEventListener('ffm-mode-change',report);
-})();
