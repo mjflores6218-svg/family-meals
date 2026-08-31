@@ -20,3 +20,33 @@ function toggleTimer(expand){timerExpanded=typeof expand==='boolean'?expand:!tim
 function openAnyList(){q('#anyModal').classList.add('show')}function closeAnyList(){q('#anyModal').classList.remove('show')}
 async function shareRecipe(){try{if(navigator.share)await navigator.share({title:window.RECIPE.title,text:'Save this recipe to AnyList',url:location.href});else alert('In Safari, tap Share, then choose AnyList Recipe Import.')}catch(e){}}
 updateStep();renderTimer();renderRating();
+// v9: sticky in-page mode switcher and mobile-safe floating controls
+function setRecipeMode(mode, shouldScroll=true){
+  const cook=q('#cook'), all=q('#allsteps');
+  if(!cook||!all)return;
+  if(mode==='cook'){
+    cook.classList.add('active'); all.classList.remove('show'); updateStep();
+    document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode==='cook'));
+    if(shouldScroll)cook.scrollIntoView({behavior:'smooth',block:'start'});
+  }else{
+    cook.classList.remove('active'); all.classList.add('show');
+    document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode==='all'));
+    if(shouldScroll)all.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+startCooking=function(){setRecipeMode('cook',true)};
+showAll=function(){setRecipeMode('all',true)};
+function initRecipeModeDock(){
+  const heroBtns=document.querySelector('.hero .btns');
+  const main=document.querySelector('main.wrap');
+  if(!heroBtns||!main||!q('#cook')||!q('#allsteps'))return;
+  document.body.classList.add('recipePage');
+  const dock=document.createElement('div');
+  dock.className='recipeModeDock';
+  dock.innerHTML='<div class="recipeModeDockInner" role="group" aria-label="Recipe view"><button class="modeBtn" data-mode="all" type="button">All Steps</button><button class="modeBtn" data-mode="cook" type="button">Cooking Mode</button></div>';
+  heroBtns.closest('.hero').insertAdjacentElement('afterend',dock);
+  dock.addEventListener('click',e=>{const b=e.target.closest('[data-mode]');if(b)setRecipeMode(b.dataset.mode,true)});
+  const io=new IntersectionObserver(entries=>{const visible=!entries[0].isIntersecting;dock.classList.toggle('visible',visible)},{threshold:.05});
+  io.observe(heroBtns);
+}
+initRecipeModeDock();

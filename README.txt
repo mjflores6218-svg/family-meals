@@ -17,3 +17,6 @@ V7: Adds per-step photography in focused cooking mode and All Steps. HelloFresh 
 
 
 v8: Adds 1-5 star local ratings and rating filter, confetti completion with scroll-to-top, and a minimized-by-default floating expandable timer. Ratings are stored in localStorage on each browser/device.
+
+
+v9: Adds a sticky All Steps / Cooking Mode switcher after the top recipe controls scroll away, plus extra iPhone safe-area/bottom clearance so the minimized timer cannot cover Previous/Next/Done controls.

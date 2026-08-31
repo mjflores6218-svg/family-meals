@@ -7,3 +7,15 @@
 
 /* v8 ratings, completion celebration, floating timer */
 .ratingBlock{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 2px}.stars{display:flex;gap:2px}.ratingStar{appearance:none;border:0;background:transparent;padding:1px 2px;font-size:29px;line-height:1;color:#c9cec8;cursor:pointer}.ratingStar.on{color:#e0a458}.ratingStar:focus-visible{outline:2px solid #26382c;border-radius:6px}.ratingText{font-size:13px;color:#6c716b}.floatingTimer{position:fixed;z-index:8;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));background:#20231f;color:white;border-radius:18px;box-shadow:0 12px 35px #0005;overflow:hidden;min-width:112px}.timerMini{border:0;background:transparent;color:white;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 14px;font-weight:800;font-size:15px;cursor:pointer}.timerPanel{display:none;width:min(340px,calc(100vw - 28px));padding:14px 15px 15px}.floatingTimer.expanded .timerMini{display:none}.floatingTimer.expanded .timerPanel{display:block}.timerHead{display:flex;justify-content:space-between;align-items:center;gap:12px}.timerCollapse{border:0;background:#ffffff18;color:#fff;border-radius:9px;padding:6px 9px;font-weight:800}.timerPanel .clock{font-size:30px}.timerPanel .timerrow button{cursor:pointer}.confettiLayer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:9999}.confettiLayer i{position:absolute;top:-18px;width:9px;height:15px;border-radius:2px;animation:ffmConfetti 1.8s cubic-bezier(.2,.7,.3,1) forwards}@keyframes ffmConfetti{0%{top:-20px;opacity:1}100%{top:105vh;transform:translateX(35px) rotate(720deg);opacity:.85}}.ratingBadge{font-size:13px;font-weight:800;color:#9b6a18}.filters .ratingFilter{flex:0 1 auto}@media(prefers-reduced-motion:reduce){.confettiLayer{display:none}*{scroll-behavior:auto!important}}
+
+/* v9 mobile cooking navigation + timer clearance */
+body.recipePage{padding-bottom:calc(96px + env(safe-area-inset-bottom));}
+.cook{scroll-margin-top:78px;}
+.stepsAll{scroll-margin-top:78px;}
+.recipeModeDock{position:sticky;top:8px;z-index:7;display:flex;justify-content:center;pointer-events:none;height:0;opacity:0;transform:translateY(-8px);transition:opacity .18s ease,transform .18s ease}
+.recipeModeDock.visible{height:auto;opacity:1;transform:none;margin-bottom:10px}
+.recipeModeDockInner{pointer-events:auto;display:flex;gap:4px;padding:4px;background:rgba(255,255,255,.94);border:1px solid #dde2dc;border-radius:15px;box-shadow:0 8px 24px #0002;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.modeBtn{border:0;background:transparent;color:#536057;border-radius:11px;padding:9px 12px;font-size:14px;font-weight:800;white-space:nowrap;cursor:pointer}
+.modeBtn.active{background:#26382c;color:#fff}
+.cook .controls{padding-bottom:18px;margin-bottom:4px}
+@media(max-width:520px){body.recipePage{padding-bottom:calc(112px + env(safe-area-inset-bottom))}.floatingTimer{bottom:calc(12px + env(safe-area-inset-bottom));right:12px}.cook .controls{padding-bottom:62px}.recipeModeDock{top:6px}.modeBtn{padding:9px 10px;font-size:13px}}
