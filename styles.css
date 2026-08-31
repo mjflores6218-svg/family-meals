@@ -103,3 +103,6 @@ body.recipePage .wrap{padding-bottom:24px}
 #ffmLayoutDebug pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0}
 #ffmLayoutDebug button{border:0;border-radius:8px;padding:7px 9px;font-weight:700}
 #ffmLayoutDebug:not([open]){width:auto;max-height:none}
+
+/* v12.6 inline diagnostic */
+.ffmInlineDebug{border:2px solid #d79b35;background:#fffaf0;margin-bottom:12px}.ffmInlineDebug pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:10px;line-height:1.35;background:#242824;color:#f4f5ef;border-radius:10px;padding:10px;max-height:360px;overflow:auto}.ffmInlineDebug button{padding:9px 12px;font-size:13px}
