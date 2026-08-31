@@ -73,3 +73,19 @@ body.modalOpen{overflow:hidden}.modal.show{display:flex}.modalbox{max-height:min
 
 /* v12.2: cache-hardening and deployment diagnostics */
 .siteVersion{margin:18px 0 4px;text-align:center;font-size:10px;letter-spacing:.06em;color:#a1a8a1;user-select:none}
+
+/* v12.3: mobile bottom-spacing hardening */
+.siteVersion{margin:14px 0 0}
+body:not(.recipePage) .wrap{padding-bottom:20px}
+body.recipePage{padding-bottom:0}
+body.recipePage .wrap{padding-bottom:24px}
+.cook .controls{padding-bottom:18px}
+@media(max-width:520px){
+  body:not(.recipePage) .wrap{padding-bottom:calc(14px + env(safe-area-inset-bottom))}
+  body.recipePage{padding-bottom:0}
+  body.recipePage .wrap{padding-bottom:calc(18px + env(safe-area-inset-bottom))}
+  .cook .controls{padding-bottom:18px;margin-bottom:0}
+  .cook.active .controls{padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+  .floatingTimer{bottom:calc(10px + env(safe-area-inset-bottom));right:10px}
+  .siteVersion{margin:12px 0 0}
+}
