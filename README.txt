@@ -32,3 +32,12 @@ Because this Supabase project was created with automatic Data API exposure disab
   grant select, insert, update, delete on public.recipe_ratings to authenticated;
 The household membership helper function must remain executable by authenticated users.
 Guests can browse/cook without signing in; signed-in household members sync statuses and ratings.
+
+
+v12.2 cache hardening:
+- All local CSS/JS references carry ?v=12.2.
+- Internal page navigation carries ?v=12.2.
+- Recipe/history JSON fetches use cache:no-store plus a version query.
+- HTML includes no-cache meta directives as a client-side safeguard.
+- This Week and Recipes pages show a subtle v12.2 marker for deployment diagnostics.
+Note: GitHub Pages/CDN may still briefly serve a previous root index.html immediately after deployment; client code cannot override an already-cached document before it loads. The version marker makes this obvious.

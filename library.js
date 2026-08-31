@@ -93,8 +93,8 @@ $('#clearFilters').addEventListener('click', () => {
 $('#historyDate').addEventListener('change', renderHistory);
 $('#clearDate').addEventListener('click', () => { $('#historyDate').value = ''; renderHistory(); });
 Promise.all([
-  fetch('data/recipes.json', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('recipes'); return r.json(); }),
-  fetch('data/history.json', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('history'); return r.json(); })
+  fetch('data/recipes.json?v=12.2', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('recipes'); return r.json(); }),
+  fetch('data/history.json?v=12.2', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('history'); return r.json(); })
 ]).then(([r, h]) => {
   RECIPES = r.recipes || []; HISTORY = h || { weeks: [] };
   fill('#cuisineFilter', 'cuisine'); fill('#proteinFilter', 'protein'); fill('#typeFilter', 'type'); fill('#sourceFilter', 'sourceName');

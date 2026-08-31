@@ -70,3 +70,6 @@ body.modalOpen{overflow:hidden}.modal.show{display:flex}.modalbox{max-height:min
 .account{margin-left:auto}
 @media(max-width:600px){.nav{gap:10px;flex-wrap:wrap}.navlinks{margin-left:0}.account{margin-left:auto}}
 @media(min-width:601px){.brand{flex:0 0 auto}.navlinks{flex:0 0 auto}.account{flex:0 0 auto}}
+
+/* v12.2: cache-hardening and deployment diagnostics */
+.siteVersion{margin:18px 0 4px;text-align:center;font-size:10px;letter-spacing:.06em;color:#a1a8a1;user-select:none}
