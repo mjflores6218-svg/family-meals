@@ -31,3 +31,7 @@ body.recipePage{padding-bottom:calc(96px + env(safe-area-inset-bottom));}
 /* v10.5: active nav uses weight only; no underline */
 .navlinks a.active{border-bottom:0;padding-bottom:0;font-weight:800;color:#20231f}
 .navlinks a:not(.active){font-weight:650;color:#59615a}
+
+/* v10.7: deterministic active navigation state */
+.nav .navlinks > a.active{font-weight:800 !important;color:#20231f !important;text-decoration:none !important;border-bottom:0 !important;padding-bottom:0 !important}
+.nav .navlinks > a:not(.active){font-weight:650 !important;color:#59615a !important;text-decoration:none !important}
