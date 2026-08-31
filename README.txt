@@ -12,3 +12,5 @@ Long-term architecture:
 - app.js: cooking mode, timer, AnyList
 
 For future weeks: preserve recipes.json and history.json, add new recipes only once, append the completed/current week to history.json, and replace meals.json plus weekday pages.
+
+V7: Adds per-step photography in focused cooking mode and All Steps. HelloFresh recipes use externally hosted HelloFresh step imagery; other recipes use representative Unsplash photography with visible source credit.
