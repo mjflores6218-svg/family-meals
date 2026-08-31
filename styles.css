@@ -61,3 +61,5 @@ body.modalOpen{overflow:hidden}.modal.show{display:flex}.modalbox{max-height:min
 #sortFilter{font-weight:750;background:#f7f8f6}.libraryRecipe img,.historyRow img{background:#eef0eb}
 .timerPanel button:disabled{opacity:.45;cursor:not-allowed}.floatingTimer.running .timerMini{font-variant-numeric:tabular-nums}.clock{font-variant-numeric:tabular-nums}
 @media(max-width:520px){#sortFilter{flex-basis:100%}}
+/* Phase 1 shared account */
+.account{margin-left:auto}.accountBtn{border:1px solid #d8ddd8;background:#fff;border-radius:999px;padding:8px 12px;font:inherit;font-weight:700;color:#39423b}.authField{display:grid;gap:6px;margin:12px 0;font-weight:700}.authField input{font:inherit;padding:11px;border:1px solid #ccd3cc;border-radius:10px}.authError{color:#a33;min-height:1.2em;font-size:14px;margin:6px 0}@media(max-width:600px){.accountBtn{padding:7px 9px;font-size:12px}.nav{gap:8px;flex-wrap:wrap}.account{margin-left:0}}

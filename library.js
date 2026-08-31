@@ -5,8 +5,8 @@ const esc = (s) => String(s || '').replace(/[&<>\"]/g, (c) => ({ '&': '&amp;', '
 const mins = (pt) => { const m = /PT(?:(\d+)H)?(?:(\d+)M)?/.exec(pt || ''); return m ? ((+m[1] || 0) * 60 + (+m[2] || 0)) : 0; };
 function unique(k) { return [...new Set(RECIPES.map((r) => r[k]).filter(Boolean))].sort(); }
 function fill(id, k) { const e = $(id); unique(k).forEach((v) => e.insertAdjacentHTML('beforeend', `<option value="${esc(v)}">${esc(v)}</option>`)); }
-function ratingFor(r) { return Number(localStorage.getItem(`ffm-rating-${r.id}`) || 0); }
-function mealStatus(e) { const id = e.recipeId || e.eventId; return localStorage.getItem(`ffm-meal-status-${e.date}-${id}`) || 'planned'; }
+function ratingFor(r) { return window.FFMCloud?.getRating(r.id) ?? Number(localStorage.getItem(`ffm-rating-${r.id}`) || 0); }
+function mealStatus(e) { const id=e.recipeId||e.eventId; return window.FFMCloud?.getStatus(e.date,id) ?? localStorage.getItem(`ffm-meal-status-${e.date}-${id}`) ?? 'planned'; }
 function cookedDates(r) {
   const dates = [];
   HISTORY.weeks.forEach((w) => w.entries.forEach((e) => { if (e.recipeId === r.id && mealStatus(e) === 'cooked') dates.push(e.date); }));
@@ -102,3 +102,5 @@ Promise.all([
 }).catch(() => { $('#recipeGrid').innerHTML = '<div class="card errorCard">Unable to load the recipe library. Refresh after GitHub Pages finishes deploying.</div>'; });
 window.addEventListener('pageshow', () => { if (RECIPES.length) { renderRecipes(); renderHistory(); } });
 window.addEventListener('focus', () => { if (RECIPES.length) { renderRecipes(); renderHistory(); } });
+
+window.addEventListener('ffm-cloud-change', () => { if (RECIPES.length) { renderRecipes(); renderHistory(); } });

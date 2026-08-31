@@ -23,3 +23,12 @@ v11 hardening:
 - Dinner Date history stores a complete restaurant snapshot.
 - Versioned CSS/JS references to avoid stale Safari caches.
 - JS organized by feature instead of runtime function overrides.
+
+PHASE 1 / SUPABASE
+The browser uses cloud.js with the public Supabase project URL and publishable key. No service-role secret is included.
+Because this Supabase project was created with automatic Data API exposure disabled, run these grants after RLS/policies are configured:
+  grant select on public.households to authenticated;
+  grant select, insert, update, delete on public.meal_status to authenticated;
+  grant select, insert, update, delete on public.recipe_ratings to authenticated;
+The household membership helper function must remain executable by authenticated users.
+Guests can browse/cook without signing in; signed-in household members sync statuses and ratings.

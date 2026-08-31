@@ -16,8 +16,8 @@ const steps = window.RECIPE?.steps || [];
 function recipeKey() {
   return FFM.ratingPrefix + (window.RECIPE?.id || window.RECIPE?.title || location.pathname);
 }
-function getRating() { return Number(localStorage.getItem(recipeKey()) || 0); }
-function setRating(n) { localStorage.setItem(recipeKey(), String(n)); renderRating(n); }
+function getRating() { return window.FFMCloud?.getRating(window.RECIPE?.id) ?? Number(localStorage.getItem(recipeKey()) || 0); }
+async function setRating(n) { if (window.FFMCloud) await window.FFMCloud.setRating(window.RECIPE?.id, n); else localStorage.setItem(recipeKey(), String(n)); renderRating(n); }
 function renderRating(n = getRating()) {
   document.querySelectorAll('.ratingStar').forEach((b, i) => {
     b.classList.toggle('on', i < n);
@@ -80,8 +80,9 @@ function showCookedPrompt() {
     modal.setAttribute('aria-labelledby', 'cookedModalTitle');
     modal.innerHTML = `<div class="modalbox"><div class="day">Dinner complete</div><h2 id="cookedModalTitle">Mark this meal as cooked?</h2><p>This keeps your actual dinner history accurate. You can always change it later on This Week.</p><div class="btns"><button class="btn" id="markCookedBtn">✓ Mark Cooked</button><button class="btn alt" id="notNowBtn">Not now</button></div></div>`;
     document.body.appendChild(modal);
-    q('#markCookedBtn').addEventListener('click', () => {
-      localStorage.setItem(`${FFM.mealStatusPrefix}${window.RECIPE.date}-${window.RECIPE.id}`, 'cooked');
+    q('#markCookedBtn').addEventListener('click', async () => {
+      if (window.FFMCloud) await window.FFMCloud.setStatus(window.RECIPE.date, window.RECIPE.id, 'cooked', 'recipe');
+      else localStorage.setItem(`${FFM.mealStatusPrefix}${window.RECIPE.date}-${window.RECIPE.id}`, 'cooked');
       closeDialog(modal);
     });
     q('#notNowBtn').addEventListener('click', () => closeDialog(modal));
@@ -237,3 +238,5 @@ renderRating();
 initRecipeModeDock();
 initModalAccessibility();
 initTimerAccessibility();
+
+window.addEventListener('ffm-cloud-change', () => renderRating());
