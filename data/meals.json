@@ -34,7 +34,9 @@
       "source": "https://www.hellofresh.com/recipes/street-cart-style-chicken-bowls-63ecaed802dfc404e006c190",
       "image": "https://media.hellofresh.com/q_100%2Cw_1600%2Cf_auto%2Cc_limit%2Cfl_lossy/recipes/image/street-cart-style-chicken-bowls-d9b9cadb.jpg",
       "prepTime": "PT10M",
-      "cookTime": "PT20M"
+      "cookTime": "PT20M",
+      "caloriesPerServing": 650,
+      "caloriesEstimated": true
     },
     {
       "slug": "enchiladas",
@@ -64,7 +66,9 @@
       "source": "https://www.onceuponachef.com/recipes/chicken-enchiladas-with-tomatillo-sauce.html",
       "image": "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?auto=format&fit=crop&w=1600&q=85",
       "prepTime": "PT15M",
-      "cookTime": "PT25M"
+      "cookTime": "PT25M",
+      "caloriesPerServing": 720,
+      "caloriesEstimated": true
     },
     {
       "slug": "rigatoni",
@@ -95,7 +99,9 @@
       "source": "https://www.hellofresh.com/recipes/chicken-sausage-rigatoni-621e855307f48b28733f1e80",
       "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1600&q=85",
       "prepTime": "PT10M",
-      "cookTime": "PT20M"
+      "cookTime": "PT20M",
+      "caloriesPerServing": 760,
+      "caloriesEstimated": true
     },
     {
       "slug": "orange",
@@ -122,7 +128,9 @@
       "source": "",
       "image": "https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1600&q=85",
       "prepTime": "PT5M",
-      "cookTime": "PT20M"
+      "cookTime": "PT20M",
+      "caloriesPerServing": 1150,
+      "caloriesEstimated": true
     },
     {
       "slug": "pizza",
@@ -151,7 +159,9 @@
       "source": "",
       "image": "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1600&q=85",
       "prepTime": "PT15M",
-      "cookTime": "PT20M"
+      "cookTime": "PT20M",
+      "caloriesPerServing": 850,
+      "caloriesEstimated": true
     },
     {
       "slug": "argentine",
@@ -183,7 +193,9 @@
       "source": "",
       "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=1600&q=85",
       "prepTime": "PT15M",
-      "cookTime": "PT25M"
+      "cookTime": "PT25M",
+      "caloriesPerServing": 690,
+      "caloriesEstimated": true
     },
     {
       "slug": "meatloaf",
@@ -217,7 +229,9 @@
       "source": "https://www.hellofresh.com/recipes/bbq-meatloaf-and-loaded-potato-wedges-bar-67a9c9ca4113630c74a3454a",
       "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=85",
       "prepTime": "PT15M",
-      "cookTime": "PT35M"
+      "cookTime": "PT35M",
+      "caloriesPerServing": 820,
+      "caloriesEstimated": true
     }
   ]
 }

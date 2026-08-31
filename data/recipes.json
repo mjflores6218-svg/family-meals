@@ -56,7 +56,9 @@
       "stepImageCredit": "Step photography: HelloFresh",
       "stepImageCreditUrl": "https://www.hellofresh.com/recipes/street-cart-style-chicken-bowls-63ecaed802dfc404e006c190",
       "prepTime": "PT10M",
-      "cookTime": "PT20M"
+      "cookTime": "PT20M",
+      "caloriesPerServing": 650,
+      "caloriesEstimated": true
     },
     {
       "slug": "enchiladas",
@@ -108,7 +110,9 @@
       "stepImageCredit": "Representative step photography: Unsplash",
       "stepImageCreditUrl": "https://unsplash.com/license",
       "prepTime": "PT15M",
-      "cookTime": "PT25M"
+      "cookTime": "PT25M",
+      "caloriesPerServing": 720,
+      "caloriesEstimated": true
     },
     {
       "slug": "rigatoni",
@@ -162,7 +166,9 @@
       "stepImageCredit": "Step photography: HelloFresh",
       "stepImageCreditUrl": "https://www.hellofresh.com/recipes/chicken-sausage-rigatoni-621e855307f48b28733f1e80",
       "prepTime": "PT10M",
-      "cookTime": "PT20M"
+      "cookTime": "PT20M",
+      "caloriesPerServing": 760,
+      "caloriesEstimated": true
     },
     {
       "slug": "orange",
@@ -211,7 +217,9 @@
       "stepImageCredit": "Representative step photography: Unsplash",
       "stepImageCreditUrl": "https://unsplash.com/license",
       "prepTime": "PT5M",
-      "cookTime": "PT20M"
+      "cookTime": "PT20M",
+      "caloriesPerServing": 1150,
+      "caloriesEstimated": true
     },
     {
       "slug": "pizza",
@@ -261,7 +269,9 @@
       "stepImageCredit": "Representative step photography: Unsplash",
       "stepImageCreditUrl": "https://unsplash.com/license",
       "prepTime": "PT15M",
-      "cookTime": "PT20M"
+      "cookTime": "PT20M",
+      "caloriesPerServing": 850,
+      "caloriesEstimated": true
     },
     {
       "slug": "argentine",
@@ -315,7 +325,9 @@
       "stepImageCredit": "Representative step photography: Unsplash",
       "stepImageCreditUrl": "https://unsplash.com/license",
       "prepTime": "PT15M",
-      "cookTime": "PT25M"
+      "cookTime": "PT25M",
+      "caloriesPerServing": 690,
+      "caloriesEstimated": true
     },
     {
       "slug": "meatloaf",
@@ -372,7 +384,9 @@
       "stepImageCredit": "Representative step photography: Unsplash",
       "stepImageCreditUrl": "https://unsplash.com/license",
       "prepTime": "PT15M",
-      "cookTime": "PT35M"
+      "cookTime": "PT35M",
+      "caloriesPerServing": 820,
+      "caloriesEstimated": true
     }
   ]
 }

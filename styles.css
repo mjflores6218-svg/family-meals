@@ -38,3 +38,6 @@ body.recipePage{padding-bottom:calc(96px + env(safe-area-inset-bottom));}
 
 /* v10.8 recipe time metadata */
 .mealTimes{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;font-size:13px;font-weight:650;color:#667064}.mealTimes span{white-space:nowrap}.hero .meta{flex-wrap:wrap}.recipeStats{flex-wrap:wrap}
+
+/* v10.10 compact weekly nutrition/time metadata */
+.mealTimes{margin-top:6px;font-size:12px;line-height:1.25;color:#667064}.mealTimes span{white-space:normal}.mealMain{padding-top:16px;padding-bottom:16px}.mealMain .sub{line-height:1.3}.hero .meta span{white-space:nowrap}@media(max-width:520px){.mealMain{padding:11px 12px;gap:12px;grid-template-columns:78px 1fr}.mealMain img{width:78px;height:72px;border-radius:13px}.mealMain h2{font-size:18px;line-height:1.12;margin:2px 0 3px}.mealMain .sub{font-size:12px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}.mealTimes{font-size:11.5px;margin-top:5px;letter-spacing:-.01em}.mealStatus{padding:7px 10px}.statusBtn{padding:8px 3px}.card.mealTrack{margin:10px 0}}
