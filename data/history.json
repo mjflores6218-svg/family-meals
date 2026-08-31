@@ -33,7 +33,10 @@
           "eventId": "date-night-2026-09-04",
           "entryType": "dinnerDate",
           "title": "Dinner Date",
-          "day": "Friday"
+          "day": "Friday",
+          "restaurant": "Chick-fil-A — Serramonte Center",
+          "address": "6 Serramonte Ctr, Daly City, CA 94015",
+          "city": "Daly City"
         },
         {
           "date": "2026-09-05",
