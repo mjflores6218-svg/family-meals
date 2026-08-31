@@ -257,3 +257,35 @@ initModalAccessibility();
 initTimerAccessibility();
 
 window.addEventListener('ffm-cloud-change', () => renderRating());
+
+/* v12.5 diagnostic: mobile layout inspector */
+(function initMobileLayoutDiagnostic(){
+  if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) return;
+  const panel=document.createElement('details');
+  panel.id='ffmLayoutDebug';
+  panel.innerHTML='<summary>Layout debug</summary><pre id="ffmDebugText"></pre><button type="button" id="ffmCopyDebug">Copy report</button>';
+  document.body.appendChild(panel);
+  const selectors=['html','body','.wrap','.recipeModeDock','#allsteps','#cook','#cook .controls','#floatingTimer'];
+  function report(){
+    const vv=window.visualViewport;
+    const lines=[
+      'FFM v12.5 diagnostic',
+      `inner=${innerWidth}x${innerHeight}`,
+      `visual=${vv?Math.round(vv.width)+'x'+Math.round(vv.height):'n/a'} offsetTop=${vv?Math.round(vv.offsetTop):'n/a'}`,
+      `scrollY=${Math.round(scrollY)} docScrollH=${document.documentElement.scrollHeight} bodyScrollH=${document.body.scrollHeight}`,
+      `docClientH=${document.documentElement.clientHeight}`
+    ];
+    selectors.forEach(sel=>{
+      const el=document.querySelector(sel); if(!el){lines.push(`${sel}: missing`);return;}
+      const r=el.getBoundingClientRect(), cs=getComputedStyle(el);
+      lines.push(`${sel}: top=${Math.round(r.top+scrollY)} bottom=${Math.round(r.bottom+scrollY)} h=${Math.round(r.height)} display=${cs.display} pos=${cs.position} minH=${cs.minHeight} padB=${cs.paddingBottom} marginB=${cs.marginBottom}`);
+    });
+    const last=[...document.body.children].filter(el=>getComputedStyle(el).position!=='fixed').at(-1);
+    if(last){const r=last.getBoundingClientRect();lines.push(`lastBodyChild=${last.tagName}.${last.className||''} bottom=${Math.round(r.bottom+scrollY)} h=${Math.round(r.height)}`)}
+    document.querySelector('#ffmDebugText').textContent=lines.join('\n');
+  }
+  panel.addEventListener('toggle',()=>{if(panel.open) report()});
+  document.querySelector('#ffmCopyDebug').addEventListener('click',async()=>{report();try{await navigator.clipboard.writeText(document.querySelector('#ffmDebugText').textContent)}catch(e){}});
+  window.addEventListener('resize',()=>panel.open&&report());
+  window.addEventListener('scroll',()=>panel.open&&report(),{passive:true});
+})();
