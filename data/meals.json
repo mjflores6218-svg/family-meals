@@ -133,35 +133,13 @@
       "caloriesEstimated": true
     },
     {
-      "slug": "pizza",
+      "id": "date-night-2026-09-04",
+      "type": "dinnerDate",
       "day": "Friday",
-      "title": "Homemade Uncured Pepperoni Pizza",
-      "description": "Golden thin-crust pizza with melted mozzarella and uncured pepperoni beside a fresh salad",
-      "servings": "2 servings",
-      "totalTime": "PT35M",
-      "ingredients": [
-        "1 Trader Joe’s pizza dough",
-        "½–¾ cup pizza sauce",
-        "1½ cups shredded mozzarella",
-        "Uncured pepperoni, to taste",
-        "Optional leftover bell pepper or onion, thinly sliced",
-        "1 Mediterranean or Italian salad kit",
-        "Flour or cornmeal for shaping"
-      ],
-      "steps": [
-        "Take pizza dough out of the refrigerator 20–30 minutes before shaping. Heat oven as hot as practical, ideally 475–500°F, with a sheet pan or pizza stone preheating.",
-        "On a lightly floured surface, stretch dough into a 12–14 inch round or oval.",
-        "Spread with pizza sauce, leaving a border. Add mozzarella, then a full base layer of uncured pepperoni. Add optional vegetables.",
-        "Transfer to the hot pan or stone. Bake until crust is browned and cheese is bubbling, usually 10–14 minutes.",
-        "While pizza bakes, toss the salad kit.",
-        "Rest pizza 2–3 minutes, slice, and serve with salad."
-      ],
-      "source": "",
-      "image": "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1600&q=85",
-      "prepTime": "PT15M",
-      "cookTime": "PT20M",
-      "caloriesPerServing": 850,
-      "caloriesEstimated": true
+      "date": "2026-09-04",
+      "title": "Dinner Date",
+      "description": "Eating out tonight",
+      "restaurant": "TBD"
     },
     {
       "slug": "argentine",
