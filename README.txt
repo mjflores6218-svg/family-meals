@@ -1,27 +1,25 @@
-Flores Family Meals v6
+Flores Family Meals v11 — hardened baseline
 
-Long-term architecture:
-- index.html: current week only
-- monday.html through sunday.html: current-week static recipe pages for reliable AnyList import
-- recipes.html: searchable Recipe Library + Dinner History
-- recipes/<id>.html: stable permanent recipe URLs
-- data/meals.json: current week
-- data/recipes.json: permanent recipe database
-- data/history.json: dated dinner history
-- library.js: search/filter/history interface
-- app.js: cooking mode, timer, AnyList
+Canonical data:
+- data/recipes.json: permanent recipe definitions and metadata.
+- data/meals.json: current week's schedule. Recipe slots should reference a recipe slug/id; dinner dates are event records.
+- data/history.json: immutable planned-week snapshots, including full Dinner Date metadata.
 
-For future weeks: preserve recipes.json and history.json, add new recipes only once, append the completed/current week to history.json, and replace meals.json plus weekday pages.
+Generated/static surfaces:
+- monday.html ... sunday.html are current-week static recipe/event pages used for reliable Recipe structured metadata and AnyList importing.
+- recipes/*.html are permanent static recipe pages.
+- Keep generated HTML synchronized with data/recipes.json when recipe content changes.
 
-V7: Adds per-step photography in focused cooking mode and All Steps. HelloFresh recipes use externally hosted HelloFresh step imagery; other recipes use representative Unsplash photography with visible source credit.
+Local state (until shared persistence is added):
+- Ratings: ffm-rating-<recipeId>
+- Meal status: ffm-meal-status-<YYYY-MM-DD>-<recipeId/eventId>
+- Kitchen timer: ffm-kitchen-timer-v11
 
-
-v8: Adds 1-5 star local ratings and rating filter, confetti completion with scroll-to-top, and a minimized-by-default floating expandable timer. Ratings are stored in localStorage on each browser/device.
-
-
-v9: Adds a sticky All Steps / Cooking Mode switcher after the top recipe controls scroll away, plus extra iPhone safe-area/bottom clearance so the minimized timer cannot cover Previous/Next/Done controls.
-
-V10: Weekly cards distinguish Planned, Cooked, and Skipped using local browser storage. Recipe library Made/Last Made counts only meals explicitly marked Cooked.
-
-
-v10.8: Added prep time, cook time, total time, recipe time filtering/search, and Recipe schema timing metadata.
+v11 hardening:
+- Timestamp-based persistent timer, resilient to iPhone background throttling and page navigation.
+- Accessible modal behavior, Escape close, focus restoration, timer completion announcement.
+- Optional post-cooking prompt to mark the scheduled weekday meal Cooked.
+- Recipe Library sorting: highest rated, quickest, lowest calories, most cooked, least recently cooked, A-Z.
+- Dinner Date history stores a complete restaurant snapshot.
+- Versioned CSS/JS references to avoid stale Safari caches.
+- JS organized by feature instead of runtime function overrides.

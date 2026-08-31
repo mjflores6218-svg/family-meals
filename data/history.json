@@ -36,7 +36,18 @@
           "day": "Friday",
           "restaurant": "Chick-fil-A — Serramonte Center",
           "address": "6 Serramonte Ctr, Daly City, CA 94015",
-          "city": "Daly City"
+          "city": "Daly City",
+          "restaurantName": "Chick-fil-A",
+          "restaurantLocation": "Serramonte Center",
+          "rating": 2.6,
+          "ratingScale": 5,
+          "ratingSource": "Yelp",
+          "reviewCount": 425,
+          "price": "$$",
+          "website": "https://www.chick-fil-a.com/locations/ca/serramonte-center?utm_source=google&utm_medium=gmb",
+          "maps": "https://maps.apple.com/?q=Chick-fil-A%20Serramonte%20Center&address=6%20Serramonte%20Ctr%2C%20Daly%20City%2C%20CA%2094015",
+          "reservations": null,
+          "ratingRetrieved": "2026-08-31"
         },
         {
           "date": "2026-09-05",
