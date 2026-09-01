@@ -96,3 +96,11 @@ body.recipePage .wrap{padding-bottom:24px}
   body.recipePage .wrap{min-height:0!important;height:auto!important}
   .cook.active .controls{padding-bottom:18px!important}
 }
+
+
+/* v12.9: planning summary */
+.planningSummaryBtn{font-weight:800;border-color:#cbd5cb;background:#f6f8f5;color:#314438}
+.planningSummaryBox{width:min(760px,92vw)}
+.planningSummaryText{width:100%;min-height:360px;max-height:52vh;resize:vertical;box-sizing:border-box;margin:12px 0 6px;padding:14px;border:1px solid #d8ded7;border-radius:12px;background:#f8faf7;color:#28332b;font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;white-space:pre-wrap}
+.planningCopyStatus{min-height:1.3em;margin-bottom:8px}
+@media(max-width:520px){.planningSummaryBtn{flex:1 1 100%}.planningSummaryText{min-height:300px;font-size:11px}.planningSummaryBox{width:94vw}}

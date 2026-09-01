@@ -93,8 +93,8 @@ $('#clearFilters').addEventListener('click', () => {
 $('#historyDate').addEventListener('change', renderHistory);
 $('#clearDate').addEventListener('click', () => { $('#historyDate').value = ''; renderHistory(); });
 Promise.all([
-  fetch('data/recipes.json?v=12.2', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('recipes'); return r.json(); }),
-  fetch('data/history.json?v=12.2', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('history'); return r.json(); })
+  fetch('data/recipes.json?v=12.9', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('recipes'); return r.json(); }),
+  fetch('data/history.json?v=12.9', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('history'); return r.json(); })
 ]).then(([r, h]) => {
   RECIPES = r.recipes || []; HISTORY = h || { weeks: [] };
   fill('#cuisineFilter', 'cuisine'); fill('#proteinFilter', 'protein'); fill('#typeFilter', 'type'); fill('#sourceFilter', 'sourceName');
@@ -104,3 +104,81 @@ window.addEventListener('pageshow', () => { if (RECIPES.length) { renderRecipes(
 window.addEventListener('focus', () => { if (RECIPES.length) { renderRecipes(); renderHistory(); } });
 
 window.addEventListener('ffm-cloud-change', () => { if (RECIPES.length) { renderRecipes(); renderHistory(); } });
+
+
+// v12.9: planning summary for ChatGPT / weekly planning
+function planningStatusLabel(e) {
+  const st = mealStatus(e);
+  if ((e.entryType || '') === 'dinner_date') return st === 'went' ? 'Went' : st === 'skipped' ? 'Skipped' : 'Planned';
+  return st === 'cooked' ? 'Cooked' : st === 'skipped' ? 'Skipped' : 'Planned';
+}
+function planningRating(r) {
+  const n = ratingFor(r);
+  return n ? `${n}/5 stars` : 'unrated';
+}
+function buildPlanningSummary() {
+  const now = new Date();
+  const lines = [
+    'FLORES FAMILY MEALS - PLANNING SUMMARY',
+    `Generated: ${now.toLocaleString()}`,
+    '',
+    'ACTUAL / PLANNED DINNER HISTORY'
+  ];
+  const entries = HISTORY.weeks.flatMap(w => w.entries || []).slice().sort((a,b) => a.date.localeCompare(b.date));
+  if (!entries.length) lines.push('No saved dinner history.');
+  entries.forEach(e => {
+    const event = (e.entryType || '') === 'dinner_date';
+    if (event) {
+      const restaurant = e.restaurant || e.title || 'Dinner Date';
+      lines.push(`${e.date} | Dinner Date | ${restaurant} | ${planningStatusLabel(e)}`);
+    } else {
+      const r = RECIPES.find(x => x.id === e.recipeId);
+      const rating = r ? planningRating(r) : 'unrated';
+      lines.push(`${e.date} | ${e.title || r?.title || e.recipeId} | ${planningStatusLabel(e)} | ${rating}`);
+    }
+  });
+  lines.push('', 'RECIPE STATS');
+  RECIPES.slice().sort((a,b) => a.title.localeCompare(b.title)).forEach(r => {
+    const dates = cookedDates(r);
+    const last = dates.length ? dates.at(-1) : 'never';
+    lines.push(`${r.title} | rating ${planningRating(r)} | cooked ${dates.length}x | last cooked ${last} | ${r.cuisine} | ${r.protein} | ${r.type} | ${mins(r.totalTime)} min total | ~${r.caloriesPerServing || '?'} cal/serving`);
+  });
+  lines.push('', 'PLANNING RULE: Treat only meals marked Cooked as eaten. Planned or Skipped meals were not necessarily eaten and should not be excluded merely because they were scheduled.');
+  return lines.join('\n');
+}
+function closePlanningSummary() {
+  const m = document.querySelector('#planningSummaryModal');
+  if (m) m.classList.remove('show');
+  document.body.classList.remove('modalOpen');
+}
+function openPlanningSummary() {
+  if (!window.FFMCloud?.state?.user) {
+    window.FFMCloud?.openLogin?.();
+    return;
+  }
+  let m = document.querySelector('#planningSummaryModal');
+  if (!m) {
+    m = document.createElement('div');
+    m.id = 'planningSummaryModal';
+    m.className = 'modal';
+    m.setAttribute('role','dialog');
+    m.setAttribute('aria-modal','true');
+    m.setAttribute('aria-labelledby','planningSummaryTitle');
+    m.innerHTML = `<div class="modalbox planningSummaryBox"><div class="day">Shared family data</div><h2 id="planningSummaryTitle">Planning Summary</h2><p class="sub">Copy this into ChatGPT when you ask for next week's meal plan. It reflects the shared Cooked / Skipped / Went statuses and ratings currently stored for your household.</p><textarea id="planningSummaryText" class="planningSummaryText" readonly></textarea><div id="planningCopyStatus" class="sub planningCopyStatus" aria-live="polite"></div><div class="btns"><button class="btn" id="planningCopyBtn" type="button">Copy for ChatGPT</button><button class="btn alt" id="planningCloseBtn" type="button">Close</button></div></div>`;
+    document.body.appendChild(m);
+    m.addEventListener('click', e => { if (e.target === m) closePlanningSummary(); });
+    m.querySelector('#planningCloseBtn').addEventListener('click', closePlanningSummary);
+    m.querySelector('#planningCopyBtn').addEventListener('click', async () => {
+      const text = m.querySelector('#planningSummaryText').value;
+      const st = m.querySelector('#planningCopyStatus');
+      try { await navigator.clipboard.writeText(text); st.textContent = 'Copied. Paste it into ChatGPT with “Plan next week.”'; }
+      catch (_) { m.querySelector('#planningSummaryText').focus(); m.querySelector('#planningSummaryText').select(); st.textContent = 'Select all and copy the highlighted summary.'; }
+    });
+  }
+  m.querySelector('#planningSummaryText').value = buildPlanningSummary();
+  m.querySelector('#planningCopyStatus').textContent = '';
+  m.classList.add('show');
+  document.body.classList.add('modalOpen');
+}
+document.querySelector('#planningSummaryBtn')?.addEventListener('click', openPlanningSummary);
+window.addEventListener('keydown', e => { if (e.key === 'Escape' && document.querySelector('#planningSummaryModal.show')) closePlanningSummary(); });
