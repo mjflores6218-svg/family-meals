@@ -93,8 +93,8 @@ $('#clearFilters').addEventListener('click', () => {
 $('#historyDate').addEventListener('change', renderHistory);
 $('#clearDate').addEventListener('click', () => { $('#historyDate').value = ''; renderHistory(); });
 Promise.all([
-  fetch('data/recipes.json?v=12.9', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('recipes'); return r.json(); }),
-  fetch('data/history.json?v=12.9', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('history'); return r.json(); })
+  fetch('data/recipes.json?v=13.0', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('recipes'); return r.json(); }),
+  fetch('data/history.json?v=13.0', { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error('history'); return r.json(); })
 ]).then(([r, h]) => {
   RECIPES = r.recipes || []; HISTORY = h || { weeks: [] };
   fill('#cuisineFilter', 'cuisine'); fill('#proteinFilter', 'protein'); fill('#typeFilter', 'type'); fill('#sourceFilter', 'sourceName');
@@ -106,7 +106,7 @@ window.addEventListener('focus', () => { if (RECIPES.length) { renderRecipes(); 
 window.addEventListener('ffm-cloud-change', () => { if (RECIPES.length) { renderRecipes(); renderHistory(); } });
 
 
-// v12.9: planning summary for ChatGPT / weekly planning
+// v13.0: planning summary for ChatGPT / weekly planning
 function planningStatusLabel(e) {
   const st = mealStatus(e);
   if ((e.entryType || '') === 'dinner_date') return st === 'went' ? 'Went' : st === 'skipped' ? 'Skipped' : 'Planned';

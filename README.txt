@@ -44,3 +44,6 @@ Note: GitHub Pages/CDN may still briefly serve a previous root index.html immedi
 
 
 v12.8: authentication-independent iOS scroll-boundary guard. Recipe pages clamp stale dynamic-toolbar scroll offsets on scroll/resize/pageshow/visualViewport changes for guests and signed-in users alike.
+
+
+v13.0 weekly update: Aug 31-Sep 6, 2026 real-world plan; Morgan Meal tag added; Benihana dinner date.

@@ -6,59 +6,59 @@
       "entries": [
         {
           "date": "2026-08-31",
-          "recipeId": "street",
-          "title": "Street Cart-Style Chicken Bowls",
+          "recipeId": "costco-tacos",
+          "title": "Kirkland Signature Chicken Street Tacos",
           "day": "Monday"
         },
         {
           "date": "2026-09-01",
-          "recipeId": "enchiladas",
-          "title": "Chicken Enchiladas with Tomatillo Sauce",
+          "recipeId": "rigatoni",
+          "title": "Chicken Sausage Rigatoni with Mushrooms & Zucchini",
           "day": "Tuesday"
         },
         {
           "date": "2026-09-02",
-          "recipeId": "rigatoni",
-          "title": "Chicken Sausage Rigatoni",
+          "recipeId": "orange",
+          "title": "Trader Joe’s Mandarin Orange Chicken",
           "day": "Wednesday"
         },
         {
           "date": "2026-09-03",
-          "recipeId": "orange",
-          "title": "Trader Joe’s Mandarin Orange Chicken",
+          "recipeId": "argentine",
+          "title": "Argentine-Style Chicken & Chimichurri",
           "day": "Thursday"
         },
         {
           "date": "2026-09-04",
-          "eventId": "date-night-2026-09-04",
-          "entryType": "dinnerDate",
-          "title": "Dinner Date",
-          "day": "Friday",
-          "restaurant": "Chick-fil-A — Serramonte Center",
-          "address": "6 Serramonte Ctr, Daly City, CA 94015",
-          "city": "Daly City",
-          "restaurantName": "Chick-fil-A",
-          "restaurantLocation": "Serramonte Center",
-          "rating": 2.6,
-          "ratingScale": 5,
-          "ratingSource": "Yelp",
-          "reviewCount": 425,
-          "price": "$$",
-          "website": "https://www.chick-fil-a.com/locations/ca/serramonte-center?utm_source=google&utm_medium=gmb",
-          "maps": "https://maps.apple.com/?q=Chick-fil-A%20Serramonte%20Center&address=6%20Serramonte%20Ctr%2C%20Daly%20City%2C%20CA%2094015",
-          "reservations": null,
-          "ratingRetrieved": "2026-08-31"
+          "recipeId": "turkey-burgers",
+          "title": "Turkey Burgers with Tomato-Cucumber Salad & Corn",
+          "day": "Friday"
         },
         {
           "date": "2026-09-05",
-          "recipeId": "argentine",
-          "title": "Argentine-Style Chicken & Chimichurri",
-          "day": "Saturday"
+          "eventId": "date-night-2026-09-05",
+          "entryType": "dinnerDate",
+          "title": "Dinner Date",
+          "day": "Saturday",
+          "restaurant": "Benihana — Burlingame",
+          "address": "1496 Old Bayshore Highway, Burlingame, CA 94010",
+          "city": "Burlingame",
+          "restaurantName": "Benihana",
+          "restaurantLocation": "Burlingame",
+          "rating": 4.3,
+          "ratingScale": 5,
+          "ratingSource": "Google",
+          "reviewCount": 3452,
+          "price": "$$$",
+          "website": "https://www.benihana.com/locations/burlingame/",
+          "maps": "https://maps.apple.com/?q=Benihana&address=1496%20Old%20Bayshore%20Highway%2C%20Burlingame%2C%20CA%2094010",
+          "reservations": "https://www.benihana.com/reservations/",
+          "ratingRetrieved": "2026-08-31"
         },
         {
           "date": "2026-09-06",
-          "recipeId": "meatloaf",
-          "title": "BBQ Meatloaf & Loaded Potato Wedges",
+          "recipeId": "morgan-chicken-pot-pie",
+          "title": "Chicken & Mushroom Pot Pies",
           "day": "Sunday"
         }
       ]
