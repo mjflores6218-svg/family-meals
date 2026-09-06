@@ -1,5 +1,5 @@
-Flores Family Meals v13.1
+Flores Family Meals v13.2
 
-PWA/iPhone polish release.
-Adds app-style Home Screen metadata, manifest, theme color, and icons. Upload all files to the GitHub Pages repository root.
-On iPhone Safari: Share -> Add to Home Screen. The site can then launch in standalone app-style mode.
+Weekly update for Sep 7–13, 2026. The current week includes Argentine chicken, beef taco bowls, Trader Joe’s Kung Pao + vegetable fried rice, Street Cart chicken bowls, a Celia’s Daly City dinner date, Aidells sausage sheet-pan dinner, and Sunday Kirkland supreme cauliflower-crust pizza.
+
+Upload all files to the GitHub Pages repository root.

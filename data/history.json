@@ -62,6 +62,71 @@
           "day": "Sunday"
         }
       ]
+    },
+    {
+      "weekStart": "2026-09-07",
+      "label": "Sep 7 – Sep 13, 2026",
+      "entries": [
+        {
+          "date": "2026-09-07",
+          "recipeId": "argentine",
+          "title": "Argentine-Style Chicken & Chimichurri",
+          "day": "Monday"
+        },
+        {
+          "date": "2026-09-08",
+          "recipeId": "beef-taco-bowls",
+          "title": "Beef Taco Bowls",
+          "day": "Tuesday"
+        },
+        {
+          "date": "2026-09-09",
+          "recipeId": "kung-pao-fried-rice",
+          "title": "Trader Joe’s Kung Pao Chicken + Vegetable Fried Rice",
+          "day": "Wednesday"
+        },
+        {
+          "date": "2026-09-10",
+          "recipeId": "street",
+          "title": "Street Cart-Style Chicken Bowls",
+          "day": "Thursday"
+        },
+        {
+          "date": "2026-09-11",
+          "eventId": "date-night-2026-09-11",
+          "entryType": "dinnerDate",
+          "title": "Dinner Date",
+          "day": "Friday",
+          "restaurant": "Celia's Mexican Restaurant",
+          "restaurantName": "Celia's Mexican Restaurant",
+          "restaurantLocation": "Daly City",
+          "address": "379 Gellert Blvd, Daly City, CA 94015",
+          "city": "Daly City",
+          "rating": 2.7,
+          "ratingScale": 5,
+          "ratingSource": "Yelp",
+          "reviewCount": 686,
+          "price": "$$",
+          "website": "https://www.celiasrestaurants.com/location/daly-city/",
+          "maps": "https://maps.apple.com/?q=Celia%27s%20Mexican%20Restaurant&address=379%20Gellert%20Blvd%2C%20Daly%20City%2C%20CA%2094015",
+          "parking": "Parking lot",
+          "fridayHours": "11:00 AM – 10:00 PM",
+          "reservations": "https://www.yelp.com/biz/celias-mexican-restaurant-daly-city",
+          "ratingRetrieved": "2026-09-06"
+        },
+        {
+          "date": "2026-09-12",
+          "recipeId": "aidells-sheet-pan",
+          "title": "Aidells Chicken & Apple Sausage Sheet-Pan Dinner",
+          "day": "Saturday"
+        },
+        {
+          "date": "2026-09-13",
+          "recipeId": "pizza",
+          "title": "Homemade Uncured Pepperoni Pizza",
+          "day": "Sunday"
+        }
+      ]
     }
   ]
 }
