@@ -730,6 +730,56 @@
       ],
       "stepImageCredit": "Representative photography: Unsplash",
       "stepImageCreditUrl": "https://unsplash.com/license"
+    },
+    {
+      "id": "costco-cauliflower-pizza",
+      "slug": "costco-cauliflower-pizza",
+      "title": "Kirkland Signature Cauliflower-Crust Supreme Pizza",
+      "description": "Kirkland Signature supreme cauliflower-crust pizza with pepperoni, sausage, roasted vegetables and a three-cheese blend",
+      "servings": "2 servings (½ pizza each)",
+      "prepTime": "PT2M",
+      "cookTime": "PT18M",
+      "totalTime": "PT20M",
+      "caloriesPerServing": 620,
+      "caloriesEstimated": false,
+      "ingredients": [
+        "1 Kirkland Signature Cauliflower Crust Pizza, Supreme (19.4 oz)",
+        "Optional: 1 salad kit, served without dressing for one portion"
+      ],
+      "steps": [
+        "Heat oven to 425°F. Keep the pizza frozen while the oven preheats.",
+        "Remove the pizza from its overwrap and cardboard. Place the frozen pizza directly on the center oven rack; do not use a baking sheet.",
+        "Bake for 17–19 minutes, or until the cheese is golden brown. For convection, bake at 425°F for 14–16 minutes.",
+        "Let the pizza rest for 2–3 minutes, then slice and serve. Add a salad kit on the side if desired."
+      ],
+      "source": "https://www.costco.com/p/-/kirkland-signature-cauliflower-crust-pizza-supreme-2-count/100787239?langId=-1&sp=grs",
+      "image": "https://bfasset.costco-static.com/U447IH35/as/sps3xpb5h5mbxhqj3536wq9/1524380__1psd?auto=webp&format=jpg",
+      "cuisine": "Italian-American",
+      "protein": "Beef / Pork",
+      "type": "Convenience / Pizza",
+      "sourceName": "Costco",
+      "tags": [
+        "Costco",
+        "Kirkland Signature",
+        "cauliflower crust",
+        "pizza",
+        "supreme",
+        "pepperoni",
+        "sausage",
+        "roasted vegetables",
+        "quick",
+        "easy",
+        "convenience"
+      ],
+      "stepImages": [
+        "https://bfasset.costco-static.com/U447IH35/as/sps3xpb5h5mbxhqj3536wq9/1524380__1psd?auto=webp&format=jpg",
+        "https://bfasset.costco-static.com/U447IH35/as/sps3xpb5h5mbxhqj3536wq9/1524380__1psd?auto=webp&format=jpg",
+        "https://bfasset.costco-static.com/U447IH35/as/sps3xpb5h5mbxhqj3536wq9/1524380__1psd?auto=webp&format=jpg",
+        "https://bfasset.costco-static.com/U447IH35/as/sps3xpb5h5mbxhqj3536wq9/1524380__1psd?auto=webp&format=jpg"
+      ],
+      "stepImageCredit": "Product photography: Costco",
+      "stepImageCreditUrl": "https://www.costco.com/p/-/kirkland-signature-cauliflower-crust-pizza-supreme-2-count/100787239?langId=-1&sp=grs",
+      "date": "2026-09-13"
     }
   ]
 }
